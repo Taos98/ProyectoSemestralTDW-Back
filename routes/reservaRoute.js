@@ -6,6 +6,7 @@ var reservaController = require('../controllers/reservaController');
 
 var api = express.Router();
 
+// al igual que en anteriores casos, solo guardamos con api.post
 api.post('/reserva', reservaController.guardar);
 
 module.exports = api;

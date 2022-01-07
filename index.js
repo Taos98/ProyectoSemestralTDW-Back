@@ -16,13 +16,14 @@ var reserva_ruta = require('./routes/reservaRoute');
 
 const mongoose = require('mongoose') //llamo a mongoose
 
-
+//con esto marco las rutas desde donde sacare los datos
 app.use('/api', especialidad_ruta);
 app.use('/api', especialista_ruta);
 app.use('/api', horario_ruta);
 app.use('/api', reserva_ruta);
 
 //conexion hacia la base de datos
+//antes tenia un apartado con opciones, pero eran para poder encriptar los datos
   mongoose.connect(`mongodb://192.99.144.232:27017/grupo13?security=false`)
   .then(() => console.log('> Successfully connected to DB'))
   .catch(err => console.log(err))  
